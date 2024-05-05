@@ -295,7 +295,7 @@ std::shared_ptr<message_filters::Synchronizer<time_policy_t>> timesync_depth3_;
 
   /// How many messages to store in the sensor messages queues (depth, color,
   /// lidar) before deleting oldest messages.
-  int maximum_sensor_message_queue_length_ = 30;
+  int maximum_sensor_message_queue_length_ = 10;
 
   /// Map clearing params
   /// Note that values <=0.0 indicate that no clearing is performed.

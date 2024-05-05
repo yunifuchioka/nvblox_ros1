@@ -27,6 +27,7 @@
     <remap from="color/image_2" to="/wide_angle_camera_rear/image_color" />
     <remap from="color/camera_info_2" to="/wide_angle_camera_rear/camera_info" />
 
+    <remap from="pointcloud" to="/lidar/point_cloud" />
 
     <!-- Anything here ovewrites the parameters in the config file. -->
     <param name="global_frame" value="map" />

@@ -112,10 +112,10 @@ lidar_projective_integrator_max_integration_distance_m: 10.0
 projective_integrator_truncation_distance_vox: 4.0
 
 # The weighting mode, applied to TSDF and color integrations. Options: [`constant`, `constant_dropoff`, `inverse_square`, `inverse_square_dropoff`].
-weighting_mode: "inverse_square"
+weighting_mode: "constant"
 
 # Maximum weight for the TSDF. Setting this number higher will lead to higher-quality reconstructions but worse performance in dynamic scenes.
-tsdf_integrator_max_weight: 100.0
+tsdf_integrator_max_weight: 5.0
 
 # The inverse sensor model occupancy probability for voxels observed as free space.
 free_region_occupancy_probability: 0.3

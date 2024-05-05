@@ -39,7 +39,7 @@ use_color: true
 use_depth: true
 
 # Whether to integrate LiDAR scans.
-use_lidar: false
+use_lidar: true
 
 # The *output* slice height for the distance slice and ESDF pointcloud. Does not need to be within min and max height below. In units of meters.
 esdf_slice_height: 1.0
@@ -87,7 +87,7 @@ occupancy_publication_rate_hz: 2.0
 max_poll_rate_hz: 100.0
 
 # How many messages to store in the sensor messages queues (depth, color, lidar) before deleting oldest messages.
-maximum_sensor_message_queue_length: 30
+maximum_sensor_message_queue_length: 10
 
 # Radius around the `map_clearing_frame_id` outside which we clear the map. Note that values <= 0.0 indicate that no clearing is performed.
 # LOCAL MODE COMMENT FOR JAN
@@ -114,13 +114,13 @@ lidar_projective_integrator_max_integration_distance_m: 10.0
 projective_integrator_truncation_distance_vox: 6.0
 
 # The weighting mode, applied to TSDF and color integrations. Options: [`constant`, `constant_dropoff`, `inverse_square`, `inverse_square_dropoff`].
-weighting_mode: "inverse_square"
+weighting_mode: "constant_dropoff"
 
 # Maximum weight for the TSDF. Setting this number higher will lead to higher-quality reconstructions but worse performance in dynamic scenes.
 # COMMENT FOR JAN: 
 # NOISY SETTING: 1.0
 # ROBUST SETING SET TO 800
-tsdf_integrator_max_weight: 800.0
+tsdf_integrator_max_weight: 1.0
 
 # The inverse sensor model occupancy probability for voxels observed as free space.
 free_region_occupancy_probability: 0.2
@@ -138,10 +138,10 @@ occupied_region_half_width_m: 0.1
 free_region_decay_probability: 0.55
 
 # The decay probability that is applied to the occupied region on decay. Must be in `[0.0, 0.5]`.
-occupied_region_decay_probability: 0.4
+occupied_region_decay_probability: 0.49
 
 # Minimum weight of the TSDF to consider for inclusion in the mesh.
-mesh_integrator_min_weight: 0.1
+mesh_integrator_min_weight: 1
 
 # Whether to weld identical vertices together in the mesh.
 mesh_integrator_weld_vertices: false
